@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Home from './components/Home';
 
 class App extends Component {
+
+	onGreet(age) {alert("hello js - " + age);}
   render() {
 	const user = {
 		name:"Anna",
@@ -18,7 +20,7 @@ class App extends Component {
         hello react
 		</div>
 		<div>
-		<Home name={"Max"} age={22} user={user}>
+		<Home name={"Max"} age={22} user={user} greet={this.onGreet}>
 			<p>I am a foolish</p>
 		</Home>
 		</div>
