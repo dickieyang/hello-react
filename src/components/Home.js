@@ -6,8 +6,10 @@ export default class Home extends Component {
 		super(props);
 		this.age = props.age;
 		this.state = {
-			age:props.age
+			age:props.age,
+			homeLink:'LinkHome'
 		}
+		this.homeLink = 'LinkHome';
 	  }
 
 	  onAdd() {
@@ -20,6 +22,10 @@ export default class Home extends Component {
 	  handleGreet(){
 		this.props.greet(this.age)
 	  }
+	
+	handleLink(){
+		this.props.homeLink(this.state.homeLink)
+	}
   render() {
 	  console.log(this.props)
 	  
@@ -31,6 +37,8 @@ export default class Home extends Component {
 		<button onClick={() => {this.onAdd()}}>Click add</button>
 		<hr/>
 		<button onClick={this.handleGreet.bind(this)}>Greet </button>
+		<hr/>
+		<button onClick={this.handleLink.bind(this)}>HomeLink </button>
 		<h4>Hobbies</h4>
 		<ul>
 		{this.props.user.hobbies.map((hobby,i)  => <li key={i}>{hobby}</li>)}
